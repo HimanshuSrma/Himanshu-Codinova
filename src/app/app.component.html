@@ -1,0 +1,18 @@
+<div class="heroDiv">
+  <div class="logoDiv">
+    <img class="logoImg" src="{{logoUrl}}" alt="">
+  </div>
+  <div class="searchInpDiv">
+    <input type="search" class="searchInp" name="searchInp" id="" [(ngModel)]="searchedVal">
+  </div>
+  <div class="container">
+    <div class="imgDiv" *ngFor="let gif of gifData | filter:searchedVal">
+      <img [src]="gif?.images?.preview_gif?.url" alt="{{gif?.title}}">
+    </div>
+  </div>
+
+  <div class="prevNextDiv">
+    <button class="paginationBtn" (click)="pagination('prev')" [disabled]="startIndex <= 0">Prev</button>
+    <button class="paginationBtn" (click)="pagination('next')" [disabled]="endIndex>=50 || endIndex>= endIndex+10">Next</button>
+  </div>
+</div>
