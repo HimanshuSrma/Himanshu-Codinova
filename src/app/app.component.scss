@@ -50,19 +50,35 @@
 .container {
   width: 100%;
   margin: 1em auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(222px, 1fr));
+  // display: grid;
+  // grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-auto-rows: 50px;
   grid-auto-flow: dense;
   grid-gap: 5px;
 }
 
-.imgDiv {
-  display: flex;
-  height: 100%;
-  width: 100%;
-  // grid-column: auto / span 1;
-  grid-row: span 4;
+// .imgDiv {
+//   display: flex;
+//   height: 100%;
+//   width: 100%;
+//   // grid-column: auto / span 1;
+//   grid-row: span 4;
+// }
+
+.imgDiv{
+  height: 150px;
+  width: 24%;
+  display: inline-block;
+  padding: 0.5%;
+}
+
+@media screen and (max-device-width:524px) {
+  .imgDiv{
+    height: 150px;
+    width: 49%;
+    display: inline-block;
+    padding: 0.5%;
+  }
 }
 
 .searchInp:focus {
@@ -71,6 +87,7 @@
 
 .container img {
   width: 100%;
-  height: auto;
+  // height: auto;
+  height: 100%;
   object-fit: cover;
 }
